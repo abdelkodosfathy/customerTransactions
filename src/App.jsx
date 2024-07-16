@@ -1,32 +1,20 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./index.css";
-
 import CustomerTable from "./CustomerTable";
 import Example from "./Example";
 
 const App = () => {
-  //initial states comes from the api..
   const [customers, setCustomers] = useState([]);
   const [transactions, setTransactions] = useState([]);
-
   const [selectedCustomerId, setSelectedCustomerId] = useState(null);
   const [filter, setFilter] = useState({ name: "", amount: "" });
-  // const [filter, setFilter] = useState({
-  //   name: "",
-  //   minAmount: "",
-  //   maxAmount: "",
-  // });
 
-  //fetch the values from api..
   useEffect(() => {
     const fetchData = async () => {
-      const customerData = await axios.get("http://localhost:5000/customers");
-      const transactionData = await axios.get(
-        "http://localhost:5000/transactions",
-      );
-      setCustomers(customerData.data);
-      setTransactions(transactionData.data);
+      const customerData = await axios.get("/db.json");
+      setCustomers(customerData.data.customers);
+      setTransactions(customerData.data.transactions);
     };
     fetchData();
   }, []);
@@ -36,7 +24,6 @@ const App = () => {
   };
 
   const handleFilterChange = (event) => {
-    console.log(event.target.name, ": ", event.target.value);
     setFilter({ ...filter, [event.target.name]: event.target.value });
   };
 
@@ -66,13 +53,6 @@ const App = () => {
         </label>
       </div>
       <Example data={transactions} customerId={selectedCustomer?.id} />
-      {/* {selectedCustomer && (
-        <Example
-          data={transactions.filter(
-            (t) => t.customer_id === selectedCustomer.id,
-          )}
-        />
-      )} */}
       <CustomerTable
         customers={customers}
         transactions={transactions}
