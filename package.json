@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "start": "concurrently \"vite\" \"json-server --watch db.json --port 5000\"",
     "dev": "vite",
     "serve:db": "json-server --watch db.json --port 5000",
     "build": "vite build",
@@ -22,6 +23,7 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
+    "concurrently": "^6.5.1",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.2",
     "eslint-plugin-react-hooks": "^4.6.2",
@@ -30,5 +32,5 @@
     "json-server": "^1.0.0-beta.1",
     "vite": "^5.3.1"
   },
-  "homepage": "https://your-username.github.io/your-repo-name"
+  "homepage": "https://abdelkodosfathy.github.io/customerTransactions"
 }
