@@ -10,7 +10,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const Example = ({ data, customerId = null }) => {
+const Example = ({ data, customerId = null, customerName = "" }) => {
   // Filter transactions based on selected customer ID
   const customerTransactions = data.filter(
     (transaction) => transaction.customer_id == customerId,
@@ -31,7 +31,7 @@ const Example = ({ data, customerId = null }) => {
 
   return (
     <div className="chart-container">
-      <h2>Statistics for {customerId}</h2>
+      <h2>Statistics for {customerName}</h2>
       <ResponsiveContainer width="100%" height={400}>
         <LineChart
           data={chartData}

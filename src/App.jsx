@@ -73,7 +73,11 @@ const App = () => {
           />
         </label>
       </div>
-      <Example data={transactions} customerId={selectedCustomer?.id} />
+      <Example
+        data={transactions}
+        customerId={selectedCustomer?.id}
+        customerName={selectedCustomer?.name}
+      />
       {/* {selectedCustomer && (
         <Example
           data={transactions.filter(
