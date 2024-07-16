@@ -1,20 +1,40 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./index.css";
+
 import CustomerTable from "./CustomerTable";
 import Example from "./Example";
 
+//just for github pages
+import data from "./db.json"; // importing local json data ..
+
 const App = () => {
+  //initial states comes from the api..
   const [customers, setCustomers] = useState([]);
   const [transactions, setTransactions] = useState([]);
+
   const [selectedCustomerId, setSelectedCustomerId] = useState(null);
   const [filter, setFilter] = useState({ name: "", amount: "" });
+  // const [filter, setFilter] = useState({
+  //   name: "",
+  //   minAmount: "",
+  //   maxAmount: "",
+  // });
 
+  //fetch the values from api..
   useEffect(() => {
     const fetchData = async () => {
-      const customerData = await axios.get("/db.json");
-      setCustomers(customerData.data.customers);
-      setTransactions(customerData.data.transactions);
+      // uncomment this for the server
+      // const customerData = await axios.get("http://localhost:5000/customers");
+      // const transactionData = await axios.get(
+      //   "http://localhost:5000/transactions",
+      // );
+      //setCustomers(customerData.data);
+      //setTransactions(transactionData.data);
+
+      //for github pags .. commint it
+      setCustomers(data.customers);
+      setTransactions(data.transactions);
     };
     fetchData();
   }, []);
@@ -24,6 +44,7 @@ const App = () => {
   };
 
   const handleFilterChange = (event) => {
+    console.log(event.target.name, ": ", event.target.value);
     setFilter({ ...filter, [event.target.name]: event.target.value });
   };
 
@@ -53,6 +74,13 @@ const App = () => {
         </label>
       </div>
       <Example data={transactions} customerId={selectedCustomer?.id} />
+      {/* {selectedCustomer && (
+        <Example
+          data={transactions.filter(
+            (t) => t.customer_id === selectedCustomer.id,
+          )}
+        />
+      )} */}
       <CustomerTable
         customers={customers}
         transactions={transactions}
