@@ -31,7 +31,11 @@ const Example = ({ data, customerId = null, customerName = "" }) => {
 
   return (
     <div className="chart-container">
-      <h2>Statistics for {customerName}</h2>
+      {customerName ? (
+        <h2>Statistics for {customerName}</h2>
+      ) : (
+        <h2>Please Select The Customer</h2>
+      )}
       <ResponsiveContainer width="100%" height={400}>
         <LineChart
           data={chartData}

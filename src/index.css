@@ -32,12 +32,12 @@ label {
 }
 
 input {
-  margin: 0 10px;
+  /* margin: 0 10px; */
   padding: 8px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  width: 200px; /* Adjust width as needed */
-  max-width: 100%; /* Ensures input is responsive */
+  width: 100%; /* Ensures input is responsive */
+  /* max-width: 400px; */
 }
 
 table {
@@ -69,11 +69,29 @@ tr:hover {
 
 .filter-container {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  /* justify-content: center; */
   margin-bottom: 20px;
+  gap: 10px;
+}
+.filter-container label {
+  width: calc(50% - 20px);
+  min-width: 200px;
+  /* display: flex; */
+  /* justify-content: space-between; */
 }
 
 .board {
   max-width: 1000px;
   margin: auto;
+}
+
+/* Add this to your CSS file */
+
+.hovered {
+  background-color: #f0f0f0;
+}
+
+.hovered td {
+  background-color: #f0f0f0;
 }

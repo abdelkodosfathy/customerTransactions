@@ -30,6 +30,16 @@
     { "id": 21, "customer_id": 2, "date": "2022-01-05", "amount": 1600 },
     { "id": 22, "customer_id": 3, "date": "2022-01-05", "amount": 950 },
     { "id": 23, "customer_id": 4, "date": "2022-01-04", "amount": 300 },
-    { "id": 24, "customer_id": 5, "date": "2022-01-05", "amount": 1100 }
+    { "id": 24, "customer_id": 5, "date": "2022-01-05", "amount": 1100 },
+    { "id": 25, "customer_id": 1, "date": "2022-01-06", "amount": 1400 },
+    { "id": 26, "customer_id": 2, "date": "2022-01-06", "amount": 1800 },
+    { "id": 27, "customer_id": 3, "date": "2022-01-06", "amount": 1050 },
+    { "id": 28, "customer_id": 4, "date": "2022-01-06", "amount": 900 },
+    { "id": 29, "customer_id": 5, "date": "2022-01-06", "amount": 1900 },
+    { "id": 30, "customer_id": 1, "date": "2022-01-07", "amount": 2100 },
+    { "id": 31, "customer_id": 2, "date": "2022-01-07", "amount": 1450 },
+    { "id": 32, "customer_id": 3, "date": "2022-01-07", "amount": 1300 },
+    { "id": 33, "customer_id": 4, "date": "2022-01-07", "amount": 1000 },
+    { "id": 34, "customer_id": 5, "date": "2022-01-07", "amount": 2500 }
   ]
 }

@@ -57,17 +57,19 @@ const App = () => {
       <h1>Customer Transactions</h1>
       <div className="filter-container">
         <label>
-          Filter by name:
+          <p>Filter by name:</p>
           <input
             name="name"
+            type="text"
             value={filter.name}
             onChange={handleFilterChange}
           />
         </label>
         <label>
-          Filter by amount:
+          <p>Filter by amount:</p>
           <input
             name="amount"
+            type="number"
             value={filter.amount}
             onChange={handleFilterChange}
           />
